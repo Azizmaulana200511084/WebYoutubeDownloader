@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Kipasan Angin</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="body1">
+
+  <div class="logo">
+    <h3><b>Kipasan...<br>..................Angin</b></h3>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="../index.html"><img src="../assets/images/icon-1.png" alt=""> <em>Beranda</em></a></li>
+      <li><a href="../index.html#tm-section-3"><img src="../assets/images/icon-2.png" alt=""> <em>Tentang</em></a></li>
+      <li><a href="https://api.whatsapp.com/send?phone=+6283824082456&text=Apa kabar, saya telah mengunjungi situs anda ^_^)"><img src="../assets/images/icon-4.png" alt="Whatsapp"> <em>Whatsapp</em></a></li>
+    </ul>
+  </nav>
+ 
+  <div class="col-md-6 offset-md-3 mt-5">
+
+    <div class="card">
+
+      <div class="card-header bg-info">
+
+        <h5><b>:: Kipasan Angin Mp3/Mp4 Downloader Youtube ::</b></h5>
+
+      </div>
+
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="form-group">
+
+              <label class="text-weight"><b>Pastekan kode belakng dari link youtube<br>Contoh:<br><i>(https://www.youtube.com/watch?v=TalgHWd550w)<br>menjadi (TalgHWd550w)</i></b></label>
+
+              <input type="txt" name="link" class="form-control link" required>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <form class="form-download">
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="form-group">
+
+                <label class="text-weight"><b>Silakan pilih download Musik Atau Video:</b></label>
+
+                <select class="form-control formte" required>
+
+                  <option selected disabled>Pilih Musik/Video</option>
+
+                  <option value="mp3">Musik</option>
+
+                  <option value="videos">Video</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="form-group mt-4 download-video">
+
+                <button class="btn btn-success btn-block click-btn-down" type="submit">Pencarian Kualitas</button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+<script type="text/javascript">
+
+  $(".click-btn-down").click(function(){
+
+      var link = $(".link").val();
+
+    var fromate = $(".formte").children("option:selected").val();
+
+    var src =""+link+"="+fromate+"";
+
+    downloadVideo(link,fromate);
+
+  });
+
+  function downloadVideo(link,fromate) {
+
+      $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://www.yt-download.org/api/button/'+fromate+'/'+link+'"></iframe>');
+
+  }
+
+</script>
+<audio controls autoplay loop hidden>
+  <source src="../music/2.mp3" type="audio/mpeg" style="display:none">
+</audio>
+</html>
